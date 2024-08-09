@@ -1,0 +1,245 @@
+.part-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 100%;
+    gap: 20px;
+}
+
+.part-img-section {
+    padding: 20px;
+}
+
+.part-img-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.sensor-wrapper {
+    width: 100%;
+    height: 100%;
+    transform: translate(0, -100%);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.sensor-box {
+    font-size: 1.6vw;
+    padding: 2px;
+    white-space: nowrap;
+    min-width: 85px;
+    text-align: center;
+    z-index: 99;
+}
+
+.sensor-1 {
+    position: absolute;
+    top: 84%;
+    left: 32%;
+}
+
+.sensor-2 {
+    position: absolute;
+    top: 79%;
+    left: 58%;
+}
+
+.sensor-3 {
+    position: absolute;
+    top: 70%;
+    left: 58%;
+}
+
+.sensor-4 {
+    position: absolute;
+    top: 15%;
+    left: 52%;
+}
+
+.sensor-5 {
+    position: absolute;
+    top: 22%;
+    left: 57%;
+}
+
+.sensor-6 {
+    position: absolute;
+    top: 12%;
+    left: 36%;
+}
+
+.sensor-7 {
+    position: absolute;
+    top: 22%;
+    left: 30%;
+}
+
+// ----------- sesnsor line ---------------------
+.sensor-line {
+    height: 3px;
+    background-color: hsl(0, 0%, 1%);
+}
+
+.sensor-line-1 {
+    position: absolute;
+    top: 76%;
+    left: 32%;
+    width: 10%;
+    rotate: 90deg;
+}
+
+.sensor-line-2 {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    width: 6%;
+    rotate: -24deg;
+}
+
+.sensor-line-3 {
+    position: absolute;
+    top: 71%;
+    right: 44%;
+    width: 5%;
+    rotate: 0deg;
+}
+
+.sensor-line-4 {
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    width: 8%;
+    rotate: -65deg;
+}
+
+.sensor-line-5 {
+    position: absolute;
+    top: 31%;
+    right: 35%;
+    width: 6%;
+    rotate: 90deg;
+}
+
+.sensor-line-6 {
+    position: absolute;
+    top: 28%;
+    right: 46%;
+    width: 16%;
+    rotate: 62deg;
+}
+
+.sensor-line-7 {
+    position: absolute;
+    top: 35%;
+    left: 29%;
+    width: 13%;
+    rotate: 80deg;
+}
+
+.part-content-section {
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 48px 1fr;
+    gap: 12px;
+}
+
+.part-content-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.part-topic-item {
+    font-size: 1.2vw;
+    display: flex;
+    gap: 5px;
+}
+
+.topic-item-name {
+    font-weight: bold;
+}
+
+.box-status-0 {
+    background-color: hsl(0, 100%, 50%);
+}
+
+.box-status-1 {
+    background-color: hsl(83, 88%, 52%);
+}
+
+.status-0 {
+    color: hsl(0, 100%, 50%);
+}
+
+.status-1 {
+    color: hsl(83, 88%, 52%);
+}
+
+.part-content-body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.table-container {
+    max-height: 100%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.table-sensor {
+    width: 100%;
+    border-spacing: 0;
+
+    thead {
+        background-color: #DEE2E6;
+
+        tr {
+            th {
+                font-size: 18px;
+                font-weight: 900;
+                white-space: nowrap;
+                padding: 8px 4px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                font-size: 16px;
+                padding: 4px;
+            }
+        }
+
+        tr:nth-child(even) {
+            background-color: #E9ECEF;
+
+        }
+    }
+}
+
+.th-align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.text-center {
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+<div class="page">
+    <div class="page-container">
+
+        <div class="icon-section">
+            <div class="icon-box">
+                <i class="fa-solid fa-hospital"></i>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="input-item">
+                <div class="input-label">
+                    Select Project
+                </div>
+                <div class="input-box">
+                    <div class="select-wrapper">
+                        <select [(ngModel)]="paramHos" (ngModelChange)="selectHospital()">
+                            <option value="" disabled>Please Select Project</option>
+                            <option *ngFor="let data of hospitalList" value={{data.hospital_short}}>
+                                {{data.hospital_name}} ({{data.hospital_location}}) </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

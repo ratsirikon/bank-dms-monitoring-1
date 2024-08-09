@@ -1,0 +1,38 @@
+$color1: #062226;
+$color2: #11535f;
+$color3: #36858a;
+$color4: #4fbdba;
+$color5: #aefeff;
+$color6: #edffff;
+$color7: #ffffff;
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+.navbar-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #11535f;
+    letter-spacing: 2px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.icon-box {
+    color: #36858a;
+    font-size: 20px;
+}

@@ -1,0 +1,11 @@
+.layout-header {
+    width: 100vw;
+    height: 50px;
+    position: sticky;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.layout-body {
+    width: 100vw;
+    height: calc(100vh - 50px);
+}

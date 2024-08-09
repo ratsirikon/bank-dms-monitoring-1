@@ -1,0 +1,55 @@
+<div class="page">
+    <div class="page-container">
+
+        <div class="page-header">
+
+            <div class="page-header-content">
+                <div class="back-btn-section">
+                    <button class="btn-back" (click)="goToHome()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <div class="header-title-section">
+                    <div class="header-title">
+                        <div class="header-topic list-topic">
+                            List of Machine
+                        </div>
+                    </div>
+                    <div class="header-title location-title">
+                        <div class="header-topic hospital-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            {{hospitalData[0].hospital_location}}
+                        </div>
+                        <div class="header-info">
+                            {{hospitalData[0].hospital_name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr-1">
+
+        </div>
+
+        <div class="page-body">
+
+            <div class="group-card-container">
+
+                <mat-card class="machine-card" *ngFor="let item of machListByHos; let index = index"
+                    (click)="goToMachine(item.machine_id)">
+                    <mat-card-content>
+                        <div class="img-box">
+                            <img [src]="getMachineImg(item.machine_category)" alt="img-machine">
+                        </div>
+                        <div class="machine-title">
+                            {{item.machine_name}}
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+        </div>
+    </div>
+</div>

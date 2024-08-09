@@ -1,0 +1,54 @@
+<div class="page-machine">
+
+    <div class="page-machine-body">
+
+        <div class="machine-part-wrapper" *ngFor="let machine of machineAndPart">
+
+            <div class="part-item" *ngFor="let part of machine.part" (click)="goToPart(part.part_id)">
+
+                <div class="part-title">
+                    {{part.part_name}}
+                </div>
+
+                <div class="part-wrapper">
+                    <div class="part-img">
+                        <img [src]="getPartImg(part.part_category)" alt="part-img">
+                    </div>
+
+                    <div class="sensor-box" *ngFor="let sensor of part.sensor_list"
+                        [ngClass]="[sensorPosition(sensor.sensor_position), sensorBoxStatus(sensor.sensor_status)]">
+                        {{sensor.sensor_name}}
+                    </div>
+
+                    <div class="sensor-line" *ngFor="let sensor of part.sensor_list"
+                        [ngClass]="[sensorLine(sensor.sensor_position),sensorBoxStatus(sensor.sensor_status)]">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- <div class="machine-img-box">
+
+            <img src="/assets/img/machine/machine-io-basket.png" alt="machine-img">
+
+            <div class="part-wrapper">
+
+                <div class="part-container" *ngFor="let item of machineAndPart">
+                    <div class="part-item" *ngFor="let data of item.part"
+                        [style.--part-list]="(item.part.length).toString()" (click)="goToPart(data.part_id)">
+                        <div class="sensor-box" *ngFor="let sensor of data.sensor_list"
+                            [ngClass]="[sensorPosition(sensor.sensor_position), sensorStatus(sensor.sensor_status)]">
+                            {{sensor.sensor_name}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> -->
+
+    </div>
+</div>
