@@ -15,14 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { Socket, SocketIoModule } from 'ngx-socket-io';
 import { environment } from 'src/environments/environment';
 import { MatSortModule } from '@angular/material/sort';
-import { MachineComponent } from './layouts/pages/machine/machine.component';
-import { FormsModule } from '@angular/forms';
-import { HospitalComponent } from './layouts/pages/hospital/hospital.component';
-import { PartComponent } from './layouts/pages/part/part.component';
-import { BasketPullerComponent } from './layouts/template/template_machine/basket-puller/basket-puller.component';
-import { SortingComponent } from './layouts/template/template_machine/sorting/sorting.component';
-import { PartPullerComponent } from './layouts/template/template_part/part-puller/part-puller.component';
-import { PartSortingComponent } from './layouts/template/template_part/part-sorting/part-sorting.component';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HospitalComponent } from './layouts/pages/monitoring/hospital/hospital.component';
+import { MachineComponent } from './layouts/pages/monitoring/machine/machine.component';
+import { PartComponent } from './layouts/pages/monitoring/part/part.component';
+import { AddMachineComponent } from './layouts/pages/form/add-machine/add-machine.component';
+import { AddSensorComponent } from './layouts/pages/form/add-sensor/add-sensor.component';
+import { AddPartComponent } from './layouts/pages/form/add-part/add-part.component';
 
 
 @Injectable()
@@ -42,10 +41,9 @@ export class SocketHome extends Socket {
     HospitalComponent,
     MachineComponent,
     PartComponent,
-    BasketPullerComponent,
-    SortingComponent,
-    PartSortingComponent,
-    PartPullerComponent
+    AddMachineComponent,
+    AddPartComponent,
+    AddSensorComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +52,7 @@ export class SocketHome extends Socket {
     HttpClientModule,
     SocketIoModule,
     FormsModule,
+    ReactiveFormsModule,
 
 
     // Material Component

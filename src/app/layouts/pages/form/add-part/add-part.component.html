@@ -1,0 +1,130 @@
+<div class="page">
+    <div class="page-container">
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="back-btn-section">
+                    <button class="btn-back" (click)="goToHome()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+                <div class="header-text">
+                    Add Part
+                </div>
+            </div>
+
+            <hr class="hr-1">
+        </div>
+
+        <div class="page-body">
+            <div class="form-container">
+
+                <div class="form-body" [formGroup]="form">
+
+                    <div class="form-group-wrapper">
+
+                        <div class="form-group form-machine">
+                            <div class="section-topic topic-machine">
+                                Machine
+                            </div>
+                            <div class="section-machine">
+                                <div class="form-item">
+                                    <div class="item-topic">
+                                        Hospital :
+                                    </div>
+                                    <div class="item-input">
+                                        <select id="hospital" required>
+                                            <option value="" selected disabled>Choose Hospital</option>
+                                            <option value="pranangklao">pranangklao</option>
+                                            <option value="makarak">makarak</option>
+                                            <option value="taksin">taksin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="item-topic">
+                                        Machine :
+                                    </div>
+                                    <div class="item-input">
+                                        <select id="machine" required>
+                                            <option value="" selected disabled>Choose Machine</option>
+                                            <option value="basket-puller">basket-puller</option>
+                                            <option value="auto-sorting">auto-sorting</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-part" formArrayName="rows">
+
+                            <div class="section-topic topic-part">
+                                Part
+                            </div>
+
+                            <div class="form-row" *ngFor="let row of rows.controls; let i = index" [formGroupName]="i">
+                                <div class="section-part-input">
+                                    <div class="form-item">
+                                        <div class="item-topic form-group-topic">
+                                            # {{ i + 1 }}
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-topic">
+                                            Part Order No. :
+                                        </div>
+                                        <div class="item-input">
+                                            <input type="text" placeholder="Insert Part Name" required
+                                                formControlName="part_order_no">
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-topic">
+                                            Part Name :
+                                        </div>
+                                        <div class="item-input">
+                                            <input type="text" placeholder="Insert Part Name" required
+                                                formControlName="part_name">
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-topic">
+                                            Part Image :
+                                        </div>
+                                        <div class="item-input">
+                                            <input type="file" placeholder="Choose Part Iamge" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="item-input">
+                                            <button class="custom-btn-2 btn-delete" (click)="removeRow(i)"> <i
+                                                    class="fa-solid fa-xmark"></i> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-part-img">
+                                    <div class="machine-part-img-box">
+                                        <img [src]="getPartImg(111)" alt="machine-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-add">
+                                <button class="custom-btn-2 btn-add" (click)="addRow()"> Add <i
+                                        class="fa-solid fa-plus"></i> </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="form-footer">
+                    <button class="custom-btn-1 btn-cancel" (click)="goToHome()"> <span>Cancel</span> <i
+                            class="fa-solid fa-xmark"></i>
+                    </button>
+                    <button class="custom-btn-1 btn-confirm"> <span>Confirm</span> <i class="fa-solid fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

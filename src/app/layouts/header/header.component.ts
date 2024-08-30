@@ -8,11 +8,22 @@ import { Component } from '@angular/core';
 
 export class HeaderComponent {
 
+  isSidebarOpen = false
+  
   constructor() { }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen
+  }
 
   goToHome() {
     const urlToHome = `/home`
     window.location.href = urlToHome
+  }
+
+  goToAddHos() {
+    const urlToAddHos = `/form/add-hospital`
+    window.location.href = urlToAddHos
   }
 
 }

@@ -26,6 +26,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
   }
 
+
+  getHospitalImg(hospital_img: number) {
+    if (hospital_img == 1) {
+      return `dd`
+    }
+    else {
+      return '/assets/img/machine/image-placeholder.png'
+    }
+  }
+
   getHospitalData() {
     this.hospitalSubscription = this.httpClient.get<Hospital[]>('http://localhost:3000/api/hospital').subscribe(
       {
@@ -40,9 +50,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     )
   }
 
-  selectHospital() {
-    if (this.paramHos) {
-      this.router.navigate([`/monitoring/${this.paramHos}`])
+  goToAddHospital() {
+    const url = `/form/add-hospital`
+    window.location.href = url
+  }
+
+  selectHospital(hospital: string) {
+    if (hospital) {
+      this.router.navigate([`/monitoring/${hospital}`])
     } else {
       console.log('Error choose hospital first')
     }

@@ -1,6 +1,71 @@
-<div class="layout-header">
-    <app-header></app-header>
-</div>
-<div class="layout-body">
-    <router-outlet></router-outlet>
+<div class="layout">
+    <div class="layout-header">
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="icon-box icon-bars">
+                <button class="toggle-btn" (click)="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="navbar-title" (click)="goToHome()">
+                <div class="icon-box icon-hospital">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+                <span class="title-text">
+                    Machine Monitoring
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar and Backdrop -->
+    <div class="sidebar" [class.open]="isSidebarOpen">
+        <!-- Sidebar content here -->
+        <div class="sidebar-container">
+            <div class="sidebar-header">
+                <span class="sidebar-header-text">
+                    Menu
+                </span>
+                <div class="icon-box icon-bars">
+                    <button class="toggle-btn" (click)="toggleSidebar()">
+                        <i class="fa-solid fa-caret-left"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="sidebar-body">
+
+                <div class="sidebar-menu">
+                    <button class="sidebar-menu-btn" routerLink="/home" (click)="goToPage('/home')"
+                        routerLinkActive="sidebar-link-active">
+                        Home
+                    </button>
+                    <button class="sidebar-menu-btn" routerLink="form/add-hospital"
+                        (click)="goToPage('form/add-hospital')" routerLinkActive="sidebar-link-active">
+                        Add Hospital
+                    </button>
+                    <button class="sidebar-menu-btn" routerLink="form/add-machine"
+                        (click)="goToPage('form/add-machine')" routerLinkActive="sidebar-link-active">
+                        Add Machine
+                    </button>
+                    <button class="sidebar-menu-btn" routerLink="form/add-part" (click)="goToPage('form/add-part')"
+                        routerLinkActive="sidebar-link-active">
+                        Add Part
+                    </button>
+                    <button class="sidebar-menu-btn" routerLink="form/add-sensor" (click)="goToPage('form/add-sensor')"
+                        routerLinkActive="sidebar-link-active">
+                        Add Sensor
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="backdrop" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
+
+    <div class="layout-body">
+        <router-outlet></router-outlet>
+    </div>
 </div>

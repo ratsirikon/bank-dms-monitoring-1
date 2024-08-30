@@ -11,6 +11,8 @@
     margin: 0;
     padding: 0;
     font-family: 'prompt-light';
+    // font-size: 0.8vw;
+    font-size: clamp(16px, 0.8vw, 32px);
 }
 
 body {

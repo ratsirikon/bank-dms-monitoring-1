@@ -4,16 +4,23 @@
             <div class="icon-box">
                 <i class="fa-solid fa-hospital"></i>
             </div>
-            DMS-Monitoring
+            DMS Monitoring
         </div>
         <div class="navbar-menu">
-            <div class="navbar-menu-section">
-                <div class="menu-item">
-                    <!-- <button class="menu-btn">
-                        item1
-                    </button> -->
-                </div>
-            </div>
+            <button class="menu-btn" (click)="goToAddHos()">
+                <span>Add</span>
+                <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <button class="menu-btn" (click)="toggleSidebar()">
+                <span>toggle</span>
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
     </div>
+</div>
+
+
+<div class="sidebar" [class.active]="isSidebarOpen">
+    sidebar
 </div>
