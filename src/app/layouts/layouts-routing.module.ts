@@ -8,6 +8,10 @@ import { PartComponent } from './pages/monitoring/part/part.component';
 import { AddMachineComponent } from './pages/form/add-machine/add-machine.component';
 import { AddSensorComponent } from './pages/form/add-sensor/add-sensor.component';
 import { AddPartComponent } from './pages/form/add-part/add-part.component';
+import { EditHospitalComponent } from './pages/form/edit-hospital/edit-hospital.component';
+import { EditMachineComponent } from './pages/form/edit-machine/edit-machine.component';
+import { EditPartComponent } from './pages/form/edit-part/edit-part.component';
+import { EditSensorComponent } from './pages/form/edit-sensor/edit-sensor.component';
 
 const routes: Routes = [
   {
@@ -46,6 +50,22 @@ const routes: Routes = [
   {
     path: 'form/add-sensor',
     component: AddSensorComponent
+  },
+  {
+    path: 'form/edit-hospital',
+    component: EditHospitalComponent
+  },
+  {
+    path: 'form/edit-machine',
+    component: EditMachineComponent
+  },
+  {
+    path: 'form/edit-part',
+    component: EditPartComponent
+  },
+  {
+    path: 'form/edit-sensor',
+    component: EditSensorComponent
   }
 ];
 

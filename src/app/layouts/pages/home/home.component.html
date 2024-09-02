@@ -25,7 +25,7 @@
 
             <div class="form-section">
                 <div class="card-wrapper">
-                    
+
                     <div class="card" *ngFor="let data of hospitalList" (click)="selectHospital(data.hospital_short)">
                         <div class="card-img">
                             <img [src]="getHospitalImg(22)" alt="hospital-img">

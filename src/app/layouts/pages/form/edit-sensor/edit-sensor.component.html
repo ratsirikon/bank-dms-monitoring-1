@@ -1,0 +1,131 @@
+<div class="page">
+    <div class="page-container">
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="back-btn-section">
+                    <button class="btn-back" (click)="goToHome()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <div class="head-title-section">
+                    <div class="header-text">
+                        Edit Sensor
+                    </div>
+                </div>
+            </div>
+
+            <hr class="hr-1">
+        </div>
+
+        <div class="page-body">
+            <div class="form-container" [formGroup]="form">
+                <div class="form-body">
+
+                    <div class="section-machine-part-img">
+                        <div class="machine-part-img-box">
+                            <img [src]="getPartImg(1)" alt="machine-img">
+                        </div>
+                        <div class="sensor-wrapper" formArrayName="rows">
+                            <div class="sensor-box" [ngStyle]="sensorBoxPosition(row.value.sBoxLeft,row.value.sBoxTop)"
+                                *ngFor="let row of rows.controls; let i = index" [formGroupName]="i">
+                                {{row.value.name}}
+                            </div>
+
+                            <div class="sensor-line"
+                                [ngStyle]="sensorLinePosition(row.value.sLineLength,row.value.sLineLeft,row.value.sLineTop,row.value.sLineRotation)"
+                                *ngFor="let row of rows.controls; let i = index" [formGroupName]="i">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="section-form-input">
+
+                        <div class="section-machine-info">
+                            <div class="form-item">
+                                <div class="item-topic">
+                                    Part :
+                                </div>
+                                <div class="item-input">
+                                    Puller-1
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="item-topic">
+                                    Machine :
+                                </div>
+                                <div class="item-input">
+                                    Basket-Puller-1
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="item-topic">
+                                    Hospital :
+                                </div>
+                                <div class="item-input">
+                                    Pranangklao Hospital
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-sensor-list">
+                            <form [formGroup]="form">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>S-Box (Left) </th>
+                                            <th>S-Box (Top) </th>
+                                            <th>S-Line (Width) </th>
+                                            <th>S-Line (Left) </th>
+                                            <th>S-Line (Top) </th>
+                                            <th>S-Line Rotation </th>
+                                            <th> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody formArrayName="rows">
+                                        <tr *ngFor="let row of rows.controls; let i = index" [formGroupName]="i">
+                                            <td>{{ i + 1 }}</td>
+                                            <td><input type="text" formControlName="name"></td>
+                                            <td><input type="number" min="0" max="100" formControlName="sBoxLeft"> </td>
+                                            <td><input type="number" min="0" max="100" formControlName="sBoxTop"> </td>
+                                            <td><input type="number" min="0" max="100" formControlName="sLineLength">
+                                            </td>
+                                            <td><input type="number" min="0" max="100" formControlName="sLineLeft">
+                                            </td>
+                                            <td><input type="number" min="0" max="100" formControlName="sLineTop"> </td>
+                                            <td><input type="number" min="0" max="360" formControlName="sLineRotation">
+                                            </td>
+                                            <td>
+                                                <button class="btn-delete" type="button" (click)="removeRow(i)"> <i
+                                                        class="fa-solid fa-xmark"></i> </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+
+                        <div class="section-form-add">
+                            <button class="btn-add" type="button" (click)="addRow()">
+                                Add <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-footer">
+                    <button class="custom-btn-1 btn-cancel" (click)="goToHome()"> <span>Cancel</span> <i
+                            class="fa-solid fa-xmark"></i>
+                    </button>
+                    <button class="custom-btn-1 btn-confirm"> <span>Confirm</span> <i class="fa-solid fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

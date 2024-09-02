@@ -38,18 +38,18 @@ $colorslate11: #020617;
 
 .page-header {
     width: 100%;
-    height: 100px;
+    height: 160px;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     gap: 20px;
 }
 
 .page-header-content {
     width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: 40px 1fr 160px;
+    grid-template-columns: 40px 1fr;
     gap: 20px;
 }
 
@@ -82,11 +82,11 @@ $colorslate11: #020617;
 }
 
 .header-title-section {
+    width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .header-title {
@@ -125,7 +125,7 @@ $colorslate11: #020617;
 .card-wrapper {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
@@ -142,7 +142,6 @@ $colorslate11: #020617;
 }
 
 .card:hover {
-    // transform: translateY(-10px);
     scale: 95%;
 }
 
@@ -167,4 +166,30 @@ $colorslate11: #020617;
     align-items: center;
     font-weight: bold;
     text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+    .page-header {
+        width: 100%;
+        height: 100px;
+    }
+
+    .header-title-section {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 160px;
+    }
+
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

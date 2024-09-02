@@ -13,10 +13,6 @@
 
                 <div class="header-title-section">
 
-                    <div class="spacer"></div>
-
-                    <div class="spacer"></div>
-
                     <div class="header-title">
                         <div class="header-topic">
                             Hospital :
@@ -25,13 +21,15 @@
                             {{hospitalData[0].hospital_name}} ( {{hospitalData[0].hospital_location}} )
                         </div>
                     </div>
+
+                    <div class="btn-section">
+                        <button class="btn-add" (click)="goToAddMachine()">
+                            Add Machine <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+
                 </div>
 
-                <div class="btn-section">
-                    <button class="btn-add" (click)="goToAddMachine()">
-                        Add Machine <i class="fa-solid fa-plus"></i>
-                    </button>
-                </div>
 
             </div>
 

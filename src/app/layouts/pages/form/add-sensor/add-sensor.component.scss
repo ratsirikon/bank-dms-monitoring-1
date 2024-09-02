@@ -84,17 +84,15 @@
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
     border: 1px solid hsl(0, 0%, 80%);
-    display: flex;
-    flex-direction: column;
 }
 
 .form-body {
     width: 100%;
     height: calc(100% - 60px);
-    display: grid;
-    grid-template-columns: 1000px 1fr;
-    grid-template-rows: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+    overflow-y: auto;
 }
 
 .section-machine-part-img {
@@ -136,7 +134,6 @@
     text-align: center;
     z-index: 99;
     border-radius: 5px;
-
     border: 1px solid #64748b;
     background-color: #e2e8f0;
 }
@@ -149,11 +146,10 @@
 .section-form-input {
     width: 100%;
     height: 100%;
-    padding: 20px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    overflow: auto;
 }
 
 .section-machine-info {
@@ -165,44 +161,50 @@
 
 .section-sensor-list {
     width: 100%;
-    max-width: 100%;
     border: 1px solid #cbd5e1;
     border-radius: 10px;
-    overflow: auto;
+    position: relative;
+    overflow-x: auto;
 
-    table {
+    form {
         width: 100%;
-        border-spacing: 0;
 
-        thead {
-            background-color: #e2e8f0;
+        table {
+            width: 100%;
+            border-spacing: 0;
 
-            tr {
-                th {
-                    padding: 5px 10px;
-                    white-space: balance;
-                    text-align: center;
-                    vertical-align: middle;
-                    padding: 8px 4px;
-                }
-            }
-        }
+            thead {
+                background-color: #e2e8f0;
+                position: sticky;
+                top: 0;
 
-        tbody {
-            tr {
-                background-color: #ffffff;
-
-                td {
-                    padding: 5px 10px;
-
-                    input {
-                        width: 100%;
+                tr {
+                    th {
+                        padding: 5px 10px;
+                        white-space: nowrap;
+                        text-align: center;
+                        vertical-align: middle;
+                        padding: 8px 4px;
                     }
                 }
             }
 
-            tr:nth-child(even) {
-                background-color: #f1f5f9;
+            tbody {
+                tr {
+                    background-color: #ffffff;
+
+                    td {
+                        padding: 10px;
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f1f5f9;
+                }
             }
         }
     }
@@ -311,4 +313,31 @@
 .btn-confirm:hover {
     background-color: #11535f;
     color: hsl(0, 0%, 100%);
+}
+
+@media screen and (min-width:992px) {
+    .form-body {
+        display: grid;
+        grid-template-columns: 600px 1fr;
+        grid-template-rows: 100%;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    .form-body {
+        display: grid;
+        grid-template-columns: 900px 1fr;
+        grid-template-rows: 100%;
+    }
+
+    .section-form-input {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: min-content auto 40px;
+    }
+
+    .section-sensor-list {
+        overflow: auto;
+    }
 }
