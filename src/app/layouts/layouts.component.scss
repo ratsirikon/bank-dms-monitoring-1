@@ -7,7 +7,7 @@
 
 .layout-header {
     width: 100%;
-    height: 60px;
+    height: 50px;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     position: fixed;
@@ -58,26 +58,22 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     margin-left: 10px;
     cursor: pointer;
 }
 
-.icon-hospital {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.icon-logo {
+    border-radius: 5px;
+    background-color: #ffffff;
+}
 
-    svg {
-        font-size: 24px;
-        color: #36858a;
-    }
+.icon-dms {
+    width: 100%;
+    height: 100%;
 }
 
 .title-text {
-    // font-size: 24px;
     font-weight: bold;
     font-family: 'prompt';
     letter-spacing: 2px;
@@ -174,7 +170,7 @@
 
 .layout-body {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 50px);
     position: fixed;
-    top: 60px;
+    top: 50px;
 }
